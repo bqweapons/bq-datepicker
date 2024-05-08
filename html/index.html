@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Rigelsoft">
+  <title>Datepicker</title>
+
+  <link rel="canonical" href="https://getbootstrap.jp/docs/5.0/examples/album/">
+  <link href="../css/bq-datepicker.css" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+  <!-- fontawesome core CSS -->
+  <link href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css" rel="stylesheet">
+  <link href="../node_modules/@fortawesome/fontawesome-free/css/brands.css" rel="stylesheet">
+  <link href="../node_modules/@fortawesome/fontawesome-free/css/solid.css" rel="stylesheet">
+  <link href="../node_modules/@fortawesome/fontawesome-free/css/regular.css" rel="stylesheet">
+
+
+<style>
+
+b{
+  color: blue!important;
+}
+
+</style>
+
+</head>
+
+<body class="py-5">
+
+
+  <section class="py-3">
+    <div class="container ">
+      <div class="row">
+        <h4>
+          <i class="fas fa-cogs text-info"></i> 準備
+        </h4>
+        <div class="col-12">
+          <div class="pl-2">
+            <h5><i class="far fa-file-code text-success"></i> CSSインクルード</h5>
+            <ul class="list-group list-group-flush col-7">
+              <li class="list-group-item">&lt;link href="./bootstrap/bootstrap.min.css" rel="stylesheet" &gt;</li>
+              <li class="list-group-item">&lt;link href="./fontawesome/css/fontawesome.css" rel="stylesheet" &gt;</li>
+              <li class="list-group-item">&lt;link href="./fontawesome/css/brands.css" rel="stylesheet" &gt;</li>
+              <li class="list-group-item">&lt;link href="./fontawesome/css/solid.css" rel="stylesheet" &gt;</li>
+              <li class="list-group-item">&lt;link href="./fontawesome/css/regular.css" rel="stylesheet" &gt;</li>
+              <li class="list-group-item">&lt;link href="./bq-datepicker.css" rel="stylesheet" &gt;</li>
+              <li class="list-group-item"></li>
+            </ul>
+            <h5><i class="fab fa-node-js text-success"></i> JSインクルード</h5>
+            <ul class="list-group list-group-flush col-7">
+              <li class="list-group-item">&lt;script type="text/javascript"
+                src="./moment/moment.min.js"&gt;&lt;/script&gt;</li>
+              <li class="list-group-item">&lt;script type="text/javascript" src="./moment/ja.js"&gt;&lt;/script&gt;</li>
+              <li class="list-group-item">&lt;script type="text/javascript" src="bq-datepicker.js"&gt;&lt;/script&gt;
+              </li>
+              <li class="list-group-item"></li>
+            </ul>
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- デフォルト設定の日付ピッカー -->
+  <section class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <h4>
+          <i class="far fa-calendar-alt text-info"></i> デフォルト設定の日付ピッカー
+        </h4>
+        <div class="col-12">
+          <div class="row pl-4">
+            <div class="input-group col-md-3">
+              <input type="text" class="form-control" id="sample1">
+              <div class="input-group-append">
+                <span class="input-group-text datepicker-button"><i class="far fa-calendar-alt"></i></span>
+              </div>
+            </div>
+            <small>
+              表示フォーマット：NNNNyoM月D日（例：令和3年5月11日）<br>
+              入力フォーマット：NNyMMDD （例：R30511）
+            </small>
+          </div>
+        </div>
+
+        <h5 class="mt-2"><i class="fas fa-code text-success"></i>  htmlソース：</h5>
+        <div class="col-12">
+          <pre>&lt;div class="input-group col-md-3">
+  &lt;input type="text" class="form-control" id="<b>sample1</b>">
+  &lt;div class="input-group-append">
+    &lt;span class="input-group-text <b>datepicker-button</b>">&lt;i class="far fa-calendar-alt">&lt;/i>&lt;/span>
+  &lt;/div>
+&lt;/div></pre>
+        </div>
+
+        <h5 class="mt-2"><i class="fab fa-node-js text-success"></i>  JSソースコード：</h5>
+        <div class="col-12">
+          <code class="pl-4">document.querySelector("#<b>sample1</b>").datepicker();</code>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HTMlソースでフォーマット設定 -->
+  <section class=" py-3">
+    <div class="container">
+      <div class="row">
+        <h4>
+          <i class="far fa-calendar-alt text-info"></i> HTMlソースでフォーマット設定
+        </h4>
+        <div class="col-12">
+          <div class="row pl-4">
+
+
+            <div class="input-group col-md-3">
+              <input type="text" class="form-control" id="sample2"
+                data-display_format="NNNNyoM月D日"
+                data-edit_format="YYYYMMDD"
+                data-month_format="NNNNyoM月"
+              >
+              <div class="input-group-append">
+                <span class="input-group-text datepicker-button"><i class="far fa-calendar-alt"></i></span>
+              </div>
+            </div>
+
+
+            <small>
+              表示フォーマット：NNyoM月D日（例：令和3年5月11日）<br>
+              入力フォーマット：YYYYMMDD （例：20210511）
+            </small>
+          </div>
+        </div>
+
+        <h5 class="mt-2"><i class="fas fa-code text-success"></i>  htmlソース：</h5>
+        <div class="col-12">
+          <pre>&lt;div class="input-group col-md-3">
+  &lt;input type="text" class="form-control" id="<b>sample2</b>"
+    data-edit_format = "<b>YYYYMMDD</b>"
+    data-display_format="<b>NNNNyoM月D日</b>"
+    data-month_format="<b>NNNNyoM月</b>"
+  >
+  &lt;div class="input-group-append">
+    &lt;span class="input-group-text <b>datepicker-button</b>">&lt;i class="far fa-calendar-alt">&lt;/i>&lt;/span>
+  &lt;/div>
+&lt;/div></pre>
+        </div>
+
+
+        <h5 class="mt-2"><i class="fab fa-node-js text-success"></i>  JSソースコード：</h5>
+        <div class="col-12">
+          <code class="pl-4">document.querySelector("#<b>sample2</b>").datepicker();</code>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- JSでフォーマット設定 -->
+  <section class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <h4>
+          <i class="far fa-calendar-alt text-info"></i> JSでフォーマット設定
+        </h4>
+        <div class="col-12">
+          <div class="row pl-4">
+            <div class="input-group col-md-3">
+              <input type="text" class="form-control" id="sample3">
+              <div class="input-group-append">
+                <span class="input-group-text datepicker-button"><i class="far fa-calendar-alt"></i></span>
+              </div>
+            </div>
+            <small>
+              表示フォーマット：YYYY年MM月DD日（例：2021年5月11日）<br>
+              入力フォーマット：YYYY/MM/DD （例：2021/05/11）
+            </small>
+          </div>
+        </div>
+
+        <h5 class="mt-2"><i class="fas fa-code text-success"></i>  htmlソース：</h5>
+        <div class="col-12">
+          <pre>&lt;div class="input-group col-md-3">
+  &lt;input type="text" class="form-control" id="<b>sample3</b>">
+  &lt;div class="input-group-append">
+    &lt;span class="input-group-text <b>datepicker-button</b>">&lt;i class="far fa-calendar-alt">&lt;/i>&lt;/span>
+  &lt;/div>
+&lt;/div></pre>
+        </div>
+
+        <h5 class="mt-2"><i class="fab fa-node-js text-success"></i>  JSソースコード：</h5>
+        <div class="col-12">
+          <code class="">
+            <div>document.querySelector("#sample3").datepicker({</div>
+            <div>  edit_format: "YYYY/MM/DD",                  // 編集時のフォーマット</div>
+            <div>  month_format: "YYYY年MM月",            // 年月フォーマット</div>
+            <div>  display_format: "YYYY年MM月DD日",       // 表示フォーマット</div>
+            <div>});</div>
+          </code>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- フォーマット変更 -->
+  <section class="py-3">
+    <div class="container">
+      <div class="row">
+        <h4>
+          <i class="far fa-calendar-alt text-info"></i> 選択データよりフォーマット切替
+        </h4>
+        <div class="col-12">
+          <div class="row pl-4">
+            <div class="col-12">
+              <div>
+                <input type="radio" value="0" id="format_NNyMMDD" name="radio_fromat" checked onclick="changeFormat(this.value)">
+                <label for="format_NNyMMDD" >
+                  和暦フォーマット
+                  <small>
+                    表示フォーマット：NNNNyoM月D日（例：令和3年5月11日）、
+                    入力フォーマット：NNyMMDD （例：R30511）
+                    </small>
+                </label>
+              </div>
+              <div>
+                <input type="radio" value="1" id="format_YYYYMMDD" name="radio_fromat" onclick="changeFormat(this.value)">
+                <label for="format_YYYYMMDD" >
+                  西暦フォーマット
+                  <small>
+                    表示フォーマット：YYYY年MM月DD日（例：令和3年5月11日）、
+                    入力フォーマット：YYYYMMDD （例：R30511）
+                  </small>
+                </label>
+              </div>
+            </div>
+            <div class="input-group col-md-3">
+              <input type="text" class="form-control" id="sample4">
+              <div class="input-group-append">
+                <span class="input-group-text datepicker-button"><i class="far fa-calendar-alt"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="mt-2"><i class="fas fa-code text-success"></i>  htmlソース：</h5>
+        <div class="col-12">
+          <pre>&lt;input type="radio" value="0" id="format_NNyMMDD" name="radio_fromat" checked onclick="<b>changeFormat(this.value)</b>">
+&lt;label for="format_NNyMMDD" >
+  和暦フォーマット
+  &lt;small>
+    表示フォーマット：NNNNyoM月D日（例：令和3年5月11日）、
+    入力フォーマット：NNyMMDD （例：R30511）
+    &lt;/small>
+&lt;/label>
+
+&lt;input type="radio" value="1" id="format_YYYYMMDD" name="radio_fromat" onclick="<b>changeFormat(this.value)</b>">
+&lt;label for="format_YYYYMMDD" >
+  西暦フォーマット
+  &lt;small>
+    表示フォーマット：YYYY年MM月DD日（例：令和3年5月11日）、
+    入力フォーマット：YYYYMMDD （例：R30511）
+  &lt;/small>
+&lt;/label>
+
+&lt;div class="input-group col-md-3">
+  &lt;input type="text" class="form-control" id="<b>sample4</b>">
+  &lt;div class="input-group-append">
+    &lt;span class="input-group-text datepicker-button">&lt;i class="far fa-calendar-alt">&lt;/i>&lt;/span>
+  &lt;/div>
+&lt;/div></pre>
+        </div>
+
+        <h5 class="mt-2"><i class="fab fa-node-js text-success"></i>  JSソースコード：</h5>
+        <div class="col-12">
+            <pre class="text-danger">&lt!-- 初期化処理 -->
+document.querySelector("#sample4").datepicker();
+
+&lt!-- 日付フォーマット変更処理 -->
+function changeFormat(flg){
+  let foramt = {};
+  if (flg == "1") {
+    foramt = {
+      edit_format: "YYYYMMDD",              // 編集時のフォーマット
+      month_format: "YYYY年MM月",           // 年月フォーマット
+      display_format: "YYYY年MM月DD日",     // 表示フォーマット
+    }
+  } else {
+    foramt = {
+      month_format : "NNNNyoM月",           // 年月フォーマット
+      edit_format : "NNyMMDD",              // 表示フォーマット
+      display_format : "NNNNyoM月D日",      // 表示フォーマット
+    }
+  }
+  document.querySelector("#sample4").datepicker(foramt);
+}</pre>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+</body>
+
+<script type="text/javascript" src="../node_modules/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="../node_modules/moment/locale/ja.js"></script>
+
+
+<script type="text/javascript" src="../js/bq-datepicker.js"></script>
+
+<script>
+  document.querySelector("#sample1").datepicker();
+  document.querySelector("#sample2").datepicker();
+  document.querySelector("#sample3").datepicker({
+    edit_format: "YYYY/MM/DD",             // 編集時のフォーマット
+    month_format: "YYYY年MM月",            // 年月フォーマット
+    display_format: "YYYY年MM月DD日",       // 表示フォーマット
+  });
+  document.querySelector("#sample4").datepicker();
+
+  function changeFormat(flg){
+    let foramt = {};
+    if (flg == "1") {
+      foramt = {
+        edit_format: "YYYYMMDD",              // 編集時のフォーマット
+        month_format: "YYYY年MM月",           // 年月フォーマット
+        display_format: "YYYY年MM月DD日",     // 表示フォーマット
+      }
+    } else {
+      foramt = {
+        month_format : "NNNNyoM月",           // 年月フォーマット
+        edit_format : "NNyMMDD",              // 表示フォーマット
+        display_format : "NNNNyoM月D日",      // 表示フォーマット
+      }
+    }
+    document.querySelector("#sample4").datepicker(foramt);
+  }
+</script>
+
+</html>
