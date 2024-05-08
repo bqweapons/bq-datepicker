@@ -34,4 +34,4 @@
     **入力フォーマット**の形式で日付をフォーマットします
 
 -----
-## 詳細は`docs/index.html`をご覧ください。
+## 詳細は[サンプル画面](https://bqweapons.github.io/bq-datepicker/)をご覧ください。
